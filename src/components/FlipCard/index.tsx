@@ -51,9 +51,10 @@ export function FlipCard({ node }: Props) {
       <div className={styles.nodeInner}>
         {/* Front face */}
         <div className={`${styles.nodeFront} ${isSpecial ? styles.nodeSpecialFront : ''}`}>
-          {shipIcon && <div className={styles.shipIcon}>🚀</div>}
-
-          <div className={`${styles.nodeTitle} ${titleColorClass}`}>{title}</div>
+          <div className={`${styles.nodeTitle} ${titleColorClass}`}>
+            {shipIcon && <span className={styles.shipIcon} aria-hidden="true">🚀 </span>}
+            {title}
+          </div>
           <div className={`${styles.nodeDesc} ${isSpecial ? styles.nodeDescSpecial : ''}`}>{desc}</div>
 
           {loopBadge && (
@@ -71,6 +72,7 @@ export function FlipCard({ node }: Props) {
               ))}
             </div>
           )}
+
         </div>
 
         {/* Back face */}
