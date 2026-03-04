@@ -76,7 +76,8 @@ export function PageCta() {
             <dt className={styles.contactLabel}>Resume</dt>
             <dd className={styles.contactValueWrap}>
               <a
-                href="#"
+                href="/CaitlynFeletarResume.pdf"
+                download="CaitlynFeletarResume.pdf"
                 className={styles.contactValue}
                 aria-label="Download Caitlyn Feletar's resume"
               >

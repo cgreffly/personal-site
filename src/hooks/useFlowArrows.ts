@@ -184,7 +184,7 @@ export function useFlowArrows(
       if (n4el && n5el && isOnScreen(n4el) && isOnScreen(n5el)) {
         const n4 = getCenter(n4el, canvas);
         const n5 = getCenter(n5el, canvas);
-        const n4ExitY = n4.top + n4.h * 0.3;
+        const n4ExitY = n4.top + n4.h * 0.35;
         tryDraw(
           'n4-n5',
           `M ${n4.left} ${n4ExitY} C ${n4.left - 60} ${n4ExitY} ${n5.x} ${n5.top - 80} ${n5.x} ${n5.top - 14}`,

@@ -27,7 +27,7 @@ export function FlowSection() {
     >
       <div className={styles.flowHeader}>
         <h2 id="flow-heading" className={styles.flowTitle}>
-          End to <em>end</em> execution.
+          <em>End-to-end</em> execution.
         </h2>
         <p className={styles.flowSubtitle}>
           From the first conversation to the moment it ships — I own the whole
@@ -37,7 +37,11 @@ export function FlowSection() {
 
       <FlowCanvas />
 
-      <section id="contact" className={styles.contactSection} aria-label="Contact">
+      <section
+        id="contact"
+        className={styles.contactSection}
+        aria-label="Contact"
+      >
         <div className={styles.contactInner}>
           <p className={styles.contactHeading}>Get in touch.</p>
           <div role="status" aria-live="polite" className={styles.srOnly}>
@@ -94,7 +98,8 @@ export function FlowSection() {
               <dt className={styles.contactLabel}>Resume</dt>
               <dd className={styles.contactValueWrap}>
                 <a
-                  href="#"
+                  href="/CaitlynFeletarResume.pdf"
+                  download="CaitlynFeletarResume.pdf"
                   className={styles.contactValue}
                   aria-label="Download Caitlyn Feletar's resume"
                 >

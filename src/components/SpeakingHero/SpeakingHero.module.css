@@ -7,7 +7,7 @@
 
 .eyebrow {
   display: block;
-  font-size: 0.62rem;
+  font-size: 0.82rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   /* Changed from --sage (#7c9070, 3.16:1) to --sage-dark (#4a5e42, 6.38:1) for WCAG AA */
