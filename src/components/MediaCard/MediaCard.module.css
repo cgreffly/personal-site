@@ -3,21 +3,16 @@
   border: 1px solid rgba(44, 40, 32, 0.08);
   border-radius: 24px;
   overflow: hidden;
-  text-decoration: none;
-  color: inherit;
   display: flex;
   flex-direction: column;
   transition: box-shadow 0.25s ease, transform 0.25s ease;
+  position: relative;
+  cursor: pointer;
 }
 
 .card:hover {
   box-shadow: 0 12px 40px rgba(44, 40, 32, 0.10);
   transform: translateY(-4px);
-}
-
-.card:focus-visible {
-  outline: 2px solid var(--sage-dark);
-  outline-offset: 3px;
 }
 
 /* Thumbnail */
@@ -108,13 +103,28 @@
   font-weight: 500;
 }
 
-.title {
+/* Stretched link: ::after covers entire card, making it fully clickable */
+.titleLink {
   font-family: var(--font-serif);
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: -0.01em;
   color: var(--deep);
+  text-decoration: none;
+}
+
+.titleLink::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.titleLink:focus-visible {
+  outline: 2px solid var(--sage-dark);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
 .desc {
@@ -135,10 +145,16 @@
 
 .date {
   font-size: 0.62rem;
-  /* Removed opacity: 0.7 — blended #6b6358 at 70% on white yields ~2.84:1, failing WCAG AA.
-     Solid --stone (#6b6358) on white gives 5.28:1. */
   color: var(--stone);
   letter-spacing: 0.05em;
+}
+
+.footerLinks {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+  z-index: 1;
 }
 
 .arrow {
@@ -151,11 +167,30 @@
   transform: translateX(3px);
 }
 
+.appleLink {
+  font-size: 0.7rem;
+  color: var(--sage-dark);
+  text-decoration: none;
+  transition: transform 0.2s;
+  position: relative;
+  z-index: 1;
+}
+
+.appleLink:hover {
+  transform: translateX(3px);
+}
+
+.appleLink:focus-visible {
+  outline: 2px solid var(--sage-dark);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
 @media (max-width: 768px) {
   .body {
     padding: 1.2rem 1.25rem 1.4rem;
   }
-  .title {
+  .titleLink {
     font-size: 0.95rem;
   }
   .desc {

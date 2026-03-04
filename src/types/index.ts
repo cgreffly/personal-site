@@ -30,4 +30,5 @@ export interface MediaItem {
   desc: string;
   date: string;
   href: string;
+  appleHref?: string;
 }

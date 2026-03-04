@@ -20,17 +20,11 @@ const SHOW_COLORS: Record<ThumbGradient, string> = {
 };
 
 export function MediaCard({ item }: Props) {
-  const { type, gradient, showName, title, desc, date, href } = item;
+  const { type, gradient, showName, title, desc, date, href, appleHref } = item;
   const isPodcast = type === 'podcast';
 
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={styles.card}
-      aria-label={`${isPodcast ? 'Listen to' : 'Watch'}: ${title}`}
-    >
+    <div className={styles.card}>
       <div className={`${styles.thumb} ${THUMB_CLASSES[gradient]}`}>
         {item.thumb && (
           <img src={item.thumb} alt="" className={styles.thumbImg} />
@@ -52,13 +46,36 @@ export function MediaCard({ item }: Props) {
         <span className={styles.show} style={{ color: SHOW_COLORS[gradient] }}>
           {showName}
         </span>
-        <div className={styles.title}>{title}</div>
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.titleLink}
+          aria-label={`${isPodcast ? 'Listen to' : 'Watch'}: ${title}`}
+        >
+          {title}
+        </a>
         <div className={styles.desc}>{desc}</div>
         <div className={styles.footer}>
           <span className={styles.date}>{date}</span>
-          <span className={styles.arrow} aria-hidden="true">{isPodcast ? 'Listen →' : 'Watch →'}</span>
+          <div className={styles.footerLinks}>
+            <span className={styles.arrow} aria-hidden="true">
+              {isPodcast ? 'Web →' : 'Watch →'}
+            </span>
+            {isPodcast && appleHref && (
+              <a
+                href={appleHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.appleLink}
+                aria-label={`Listen on Apple Podcasts: ${title}`}
+              >
+                Apple →
+              </a>
+            )}
+          </div>
         </div>
       </div>
-    </a>
+    </div>
   );
 }

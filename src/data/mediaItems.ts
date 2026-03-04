@@ -50,6 +50,7 @@ export const mediaItems: MediaItem[] = [
     desc: 'How a career in beer sales led to a bootcamp rejection, a pivot, and eventually a job as a software developer.',
     date: 'Jun 2020',
     href: 'https://learntocodewith.me/podcast/selling-beer-to-coding-bootcamp-caitlyn-greffly/',
+    appleHref: 'https://podcasts.apple.com/ca/podcast/s7e6-an-unexpected-shift-from-selling-beer-to-coding/id1106620664?i=1000483162334',
   },
   {
     id: 'm2',
@@ -61,6 +62,7 @@ export const mediaItems: MediaItem[] = [
     desc: 'The job search skills bootcamps skip — and how to fill the gaps so you actually get hired.',
     date: 'Aug 2022',
     href: 'https://www.codenewbie.org/podcast/what-your-bootcamp-isn-t-teaching-you',
+    appleHref: 'https://podcasts.apple.com/us/podcast/s21-e2-what-your-bootcamp-isnt-teaching-you-caitlyn-greffly/id919219256?i=1000576176390',
   },
   {
     id: 'm3',
@@ -72,5 +74,6 @@ export const mediaItems: MediaItem[] = [
     desc: 'On making the leap into software and why writing code still feels like a gift, not a job.',
     date: 'Apr 2021',
     href: 'https://justtheusefulbits.com/jtub/caitlyn-greffly-paid-to-go-to-school-and-make-cool-things-forever/',
+    appleHref: 'https://podcasts.apple.com/us/podcast/computer-science-just-the-useful-bits/id1493009674',
   },
 ];
