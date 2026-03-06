@@ -26,7 +26,7 @@ export function Hero() {
           </p>
           <div className={styles.heroActions}>
             <Button variant="outline" asChild>
-              <a href="#">Download Resume</a>
+              <a href="/CaitlynFeletarResume.pdf" download="CaitlynFeletarResume.pdf">Download Resume</a>
             </Button>
           </div>
         </div>
